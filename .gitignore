@@ -1,0 +1,10 @@
+# Master media — the web-ready encodes live in assets/video/
+_source/
+
+# Local tooling
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
