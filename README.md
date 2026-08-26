@@ -194,8 +194,9 @@ Full checklist at the end of [`STRATEGY.md`](STRATEGY.md). The four that block e
 3. Replace the stock photography.
 4. Wire the forms and add analytics.
 
-Then find and replace `https://www.preferredcapitalpartners.com` across the site if the real domain differs
-— it appears in canonical tags, Open Graph tags, `sitemap.xml`, and `robots.txt`.
+The live domain is `prefcapitalpartners.com`; it appears in canonical tags, Open Graph tags,
+`sitemap.xml`, `robots.txt`, the `CNAME` file and the assistant knowledge base. Change it in all of
+those together if it ever moves.
 
 ---
 
