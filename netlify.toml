@@ -1,0 +1,48 @@
+# Netlify configuration
+# =============================================================================
+# The site is plain static HTML, so there is nothing to build — Netlify just
+# publishes the repository root. The functions directory is declared so the
+# optional investor-assistant endpoint is picked up if it is ever enabled.
+
+[build]
+  publish = "."
+  command = ""
+  functions = "functions"
+
+# --- Caching -----------------------------------------------------------------
+# Stylesheet and script URLs carry a ?v= query that is bumped on every change,
+# so they can be cached hard. Media has no version in its filename, so it gets
+# a week — long enough to matter, short enough that a replaced photograph
+# reaches people without a rename.
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/assets/video/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# HTML is always revalidated, so a content edit is live on the next request
+# rather than whenever a stale copy happens to expire.
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
