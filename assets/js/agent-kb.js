@@ -23,7 +23,7 @@ window.PCP_KB = {
     updated: '2026',
     fallback:
       'That is not something I can answer accurately. The team can — email ' +
-      '<a href="mailto:invest@preferredcapitalpartners.com">invest@preferredcapitalpartners.com</a> ' +
+      '<a href="mailto:invest@prefcapitalpartners.com">invest@prefcapitalpartners.com</a> ' +
       'or <a href="invest.html">request an introduction</a> and you will have a reply within one business day.',
     caveat:
       'Targets and terms are indicative, are not guaranteed, and are qualified in all respects by the ' +
@@ -299,7 +299,7 @@ window.PCP_KB = {
 
     { id: 'contact', t: 'Contact',
       k: 'contact speak call talk human email phone reach someone person introduction meeting',
-      a: 'Email <a href="mailto:invest@preferredcapitalpartners.com">invest@preferredcapitalpartners.com</a>, ' +
+      a: 'Email <a href="mailto:invest@prefcapitalpartners.com">invest@prefcapitalpartners.com</a>, ' +
          'or <a href="invest.html">request an introduction</a> and you will have a reply within one business ' +
          'day. Introductory conversations are held by the managing partner.',
       src: 'contact.html', label: 'Contact' },
@@ -307,7 +307,7 @@ window.PCP_KB = {
     { id: 'broker', t: 'Contact',
       k: 'broker brokerage deal deals dealflow selling sell listing agent submit opportunity acquisitions pipeline',
       a: 'Brokers with multifamily opportunities in our markets should send them to ' +
-         '<a href="mailto:acquisitions@preferredcapitalpartners.com">acquisitions@preferredcapitalpartners.com</a>. ' +
+         '<a href="mailto:acquisitions@prefcapitalpartners.com">acquisitions@prefcapitalpartners.com</a>. ' +
          'The acquisition criteria are published so you can screen before sending.',
       src: 'strategy.html#criteria', label: 'Acquisition criteria' },
 

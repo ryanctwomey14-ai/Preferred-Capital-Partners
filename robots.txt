@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /portal.html
 
-Sitemap: https://www.preferredcapitalpartners.com/sitemap.xml
+Sitemap: https://prefcapitalpartners.com/sitemap.xml
