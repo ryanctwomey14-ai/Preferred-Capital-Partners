@@ -1057,22 +1057,50 @@ table { border-collapse: collapse; width: 100%; }
    A docked panel rather than a floating bubble: it belongs to the page, uses
    the same paper, hairlines and label type as everything else, and goes
    full-height on a handset where a small floating card is unusable. */
-.pcp-agent { position: fixed; right: 0; bottom: 0; z-index: 300; font-family: var(--sans); }
+/* The wrapper spans the viewport so the launcher is laid out against the
+   window rather than against a shrink-to-fit box; it stays click-through and
+   the children take pointer events back. */
+.pcp-agent { position: fixed; inset: 0; z-index: 300; pointer-events: none; font-family: var(--sans); }
+.pcp-agent > * { pointer-events: auto; }
 
 .pcp-agent__launch {
   position: absolute; right: clamp(1rem, 2.5vw, 2rem); bottom: clamp(1rem, 2.5vw, 2rem);
-  display: inline-flex; align-items: center; gap: .6rem;
-  min-height: 52px; padding: 0 1.15rem 0 1rem;
+  width: 64px; height: 64px; padding: 0;
+  display: grid; place-items: center;
+  background: var(--forest-900);
+  border: 1px solid rgba(198,145,67,.5); border-radius: 2px;
+  box-shadow: 0 18px 40px -18px rgba(1,27,52,.8);
+  transition: background 220ms var(--ease-out), border-color 220ms var(--ease-out),
+              transform 220ms var(--ease-out), box-shadow 220ms var(--ease-out);
+}
+.pcp-agent__launch-mark { display: block; width: 30px; height: 31px; }
+.pcp-agent__launch-mark svg { width: 100%; height: 100%; display: block; overflow: visible; }
+
+/* The label is a hover affordance, not part of the shape. It is announced to
+   assistive technology through aria-label on the button regardless. */
+.pcp-agent__launch-hint {
+  position: absolute; right: calc(100% + .55rem); top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  white-space: nowrap; pointer-events: none;
   background: var(--forest-900); color: var(--paper);
-  border: 1px solid rgba(198,145,67,.45); border-radius: 2px;
-  font-size: .875rem; font-weight: 600; letter-spacing: .01em;
-  box-shadow: 0 18px 40px -22px rgba(1,27,52,.75);
-  transition: background 220ms var(--ease-out), border-color 220ms var(--ease-out), transform 220ms var(--ease-out);
+  border: 1px solid rgba(198,145,67,.35);
+  padding: .45rem .7rem; border-radius: 2px;
+  font-family: var(--label); font-size: .6875rem; font-weight: 600;
+  letter-spacing: .14em; text-transform: uppercase;
+  opacity: 0; transition: opacity 200ms var(--ease-out), transform 240ms var(--ease-out);
 }
-.pcp-agent__launch-mark { color: var(--gold-300); display: flex; }
 @media (hover: hover) and (pointer: fine) {
-  .pcp-agent__launch:hover { background: var(--forest); border-color: var(--gold); transform: translateY(-2px); }
+  .pcp-agent__launch:hover {
+    background: var(--forest); border-color: var(--gold);
+    transform: translateY(-3px); box-shadow: 0 24px 48px -18px rgba(1,27,52,.85);
+  }
+  .pcp-agent__launch:hover .pcp-agent__launch-hint,
+  .pcp-agent__launch:focus-visible .pcp-agent__launch-hint {
+    opacity: 1; transform: translateY(-50%) translateX(0);
+  }
 }
+.pcp-agent__launch:focus-visible .pcp-agent__launch-hint { opacity: 1; transform: translateY(-50%) translateX(0); }
+
 .pcp-agent.is-open .pcp-agent__launch { opacity: 0; pointer-events: none; transform: translateY(8px); }
 
 .pcp-agent__panel {
@@ -1176,13 +1204,18 @@ table { border-collapse: collapse; width: 100%; }
     padding-bottom: env(safe-area-inset-bottom);
     transform-origin: bottom center; transform: translateY(24px);
   }
-  .pcp-agent__launch { right: 1rem; bottom: max(1rem, env(safe-area-inset-bottom)); }
-  .pcp-agent__launch-text { font-size: .8125rem; }
+  .pcp-agent__launch {
+    right: 1rem; bottom: max(1rem, env(safe-area-inset-bottom));
+    width: 58px; height: 58px;
+  }
+  .pcp-agent__launch-mark { width: 27px; height: 28px; }
+  .pcp-agent__launch-hint { display: none; }
   .pcp-agent__msg { max-width: 96%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .pcp-agent__panel, .pcp-agent.is-open .pcp-agent__panel { transform: none; transition: opacity 200ms linear; }
+  .pcp-agent__launch-hint { transition: opacity 160ms linear; transform: translateY(-50%); }
   .pcp-agent__launch { transition: none; }
   .pcp-agent__dots i { animation: none; opacity: .6; }
 }

@@ -199,20 +199,23 @@
 
   /* ---- Interface --------------------------------------------------------- */
 
+  /* The firm's mark, same trace as the hero watermark. Sized in its own
+     viewBox so it scales with the tile rather than being redrawn. */
   var ICON_MARK =
-    '<svg width="20" height="20" viewBox="0 0 30 30" fill="none" aria-hidden="true">' +
-    '<rect x="1" y="14" width="5" height="15" fill="currentColor" opacity=".55"/>' +
-    '<rect x="8.5" y="8" width="5" height="21" fill="currentColor" opacity=".8"/>' +
-    '<rect x="16" y="11" width="5" height="18" fill="currentColor" opacity=".65"/>' +
-    '<path d="M22.5 12.5 27 3.5m0 0-5.6 1.4M27 3.5l1.4 5.6" stroke="currentColor" stroke-width="2" ' +
-    'stroke-linecap="square"/></svg>';
+    '<svg viewBox="0 0 122 128" fill="none" aria-hidden="true" focusable="false">' +
+      '<path d="M93 7 L91 41 L87 44 L85 59 L81 41 L66 31 Z" fill="#DFB877"/>' +
+      '<path d="M20 84 L36 73 L36 118 L26 118 L20 111 Z" fill="#F1EFE8" opacity=".92"/>' +
+      '<path d="M47 56 L64 41 L64 118 L53 118 L47 111 Z" fill="#F1EFE8" opacity=".92"/>' +
+      '<path d="M74 44 L91 75 L91 118 L74 118 Z" fill="#7FBBA1" opacity=".9"/>' +
+    '</svg>';
 
   var root = document.createElement('div');
   root.className = 'pcp-agent';
   root.innerHTML =
-    '<button class="pcp-agent__launch" type="button" aria-expanded="false" aria-controls="pcp-agent-panel">' +
-      '<span class="pcp-agent__launch-mark" aria-hidden="true">' + ICON_MARK + '</span>' +
-      '<span class="pcp-agent__launch-text">Ask about investing</span>' +
+    '<button class="pcp-agent__launch" type="button" aria-expanded="false" ' +
+      'aria-controls="pcp-agent-panel" aria-label="Ask about investing">' +
+      '<span class="pcp-agent__launch-mark">' + ICON_MARK + '</span>' +
+      '<span class="pcp-agent__launch-hint" aria-hidden="true">Ask about investing</span>' +
     '</button>' +
     '<section class="pcp-agent__panel" id="pcp-agent-panel" role="dialog" aria-modal="false" ' +
       'aria-label="Investor assistant" hidden>' +
