@@ -10,17 +10,11 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 
 > Performance claims, track record, and investor testimonials on a site that publicly markets a Reg D 506(c) offering are regulated communications. Do not launch with sample figures in place.
 
-**Total: 95 placeholders across 16 pages.**
+**Total: 77 placeholders across 10 pages.**
 
 ---
 
-## `404.html` — 1 item
-
-| Currently shows | What it needs |
-|---|---|
-| (404) 000-0000 | add the real number |
-
-## `about.html` — 8 items
+## `about.html` — 7 items
 
 | Currently shows | What it needs |
 |---|---|
@@ -31,30 +25,21 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 | [Accounting firm] — annual financial statements and K-1 preparation. | name your accountants |
 | [Law firm] — offering documents, Reg D filings, and compliance. | name your counsel |
 | [Management company] — regional operators selected per submarket and held to our reporting standard. | name your managers |
-| (404) 000-0000 | add the real number |
 
-## `contact.html` — 3 items
+## `contact.html` — 2 items
 
 | Currently shows | What it needs |
 |---|---|
-| (404) 000-0000 | add the real number |
-| [Street address]Atlanta, Georgia [ZIP] | add the real address |
-| (404) 000-0000 | add the real number |
+| (202) 412-8381 | add the real number |
+| [Street address]Charlotte, North Carolina [ZIP] | add the real address |
 
-## `disclosures.html` — 2 items
+## `disclosures.html` — 1 item
 
 | Currently shows | What it needs |
 |---|---|
 | [date] | set on publication |
-| (404) 000-0000 | add the real number |
 
-## `faq.html` — 1 item
-
-| Currently shows | What it needs |
-|---|---|
-| (404) 000-0000 | add the real number |
-
-## `index.html` — 9 items
+## `index.html` — 7 items
 
 | Currently shows | What it needs |
 |---|---|
@@ -64,31 +49,26 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 | 3–7 yrs | forward-looking target; must be supported by your model and reviewed by counsel before launch |
 | 31 March | confirm K-1 delivery commitment |
 | 7–9% | confirm |
-| $50,000 | confirm |
 | three to five years | confirm |
-| (404) 000-0000 | add the real number |
 
-## `invest.html` — 8 items
+## `invest.html` — 6 items
 
 | Currently shows | What it needs |
 |---|---|
 | Preferred Capital Partners Fund II, LP | replace with the live offering |
-| $50,000 | Replace with a verified value |
 | 8% | Replace with a verified value |
 | 70 / 30 | Replace with a verified value |
 | 3–5 years | Replace with a verified value |
 | 30 November | Replace with a verified value |
 | 31 March | Replace with a verified value |
-| (404) 000-0000 | add the real number |
 
-## `portal.html` — 2 items
+## `portal.html` — 1 item
 
 | Currently shows | What it needs |
 |---|---|
 | Sign in to the portal | point this at your portal provider |
-| (404) 000-0000 | add the real number |
 
-## `portfolio.html` — 44 items
+## `portfolio.html` — 43 items
 
 | Currently shows | What it needs |
 |---|---|
@@ -123,7 +103,7 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 | 1.6x | Replace with a verified value |
 | 14.1% | Replace with a verified value |
 | Legacy Park | replace with a real case study |
-| 132 units, Birmingham, Alabama. Acquired 2019 at $71,000 per unit — roughly 45% below replacement cost. Held f | Replace with a verified value |
+| 132 units, Phoenix, Arizona. Acquired 2019 at $71,000 per unit — roughly 45% below replacement cost. Held five | Replace with a verified value |
 | 5 years | Replace with a verified value |
 | 5 years | Replace with a verified value |
 | 104 | Replace with a verified value |
@@ -135,18 +115,16 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 | 1.7x | Replace with a verified value |
 | 1.8x | Replace with a verified value |
 | 62% | Replace with a verified value |
-| (404) 000-0000 | add the real number |
 
-## `privacy.html` — 4 items
+## `privacy.html` — 3 items
 
 | Currently shows | What it needs |
 |---|---|
 | [Confirm the specific analytics and advertising tools in use, and whether a consent mechanism is required for  | confirm which analytics and marketing tools are actually deployed, and add a consent banner if required for your audience |
 | [Counsel to confirm applicable state and international privacy regimes.] | counsel should confirm CCPA/CPRA, GDPR or other applicable regimes |
 | [date] | set on publication |
-| (404) 000-0000 | add the real number |
 
-## `strategy.html` — 6 items
+## `strategy.html` — 5 items
 
 | Currently shows | What it needs |
 |---|---|
@@ -155,36 +133,10 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 | $150–$250 | confirm |
 | 8% | confirm preferred return |
 | 70 / 30 | confirm split |
-| (404) 000-0000 | add the real number |
 
-## `terms.html` — 3 items
+## `terms.html` — 2 items
 
 | Currently shows | What it needs |
 |---|---|
 | [State] | counsel to confirm governing law and venue |
 | [date] | set on publication |
-| (404) 000-0000 | add the real number |
-
-## `insights/index.html` — 1 item
-
-| Currently shows | What it needs |
-|---|---|
-| (404) 000-0000 | add the real number |
-
-## `insights/multifamily-inflation-hedge.html` — 1 item
-
-| Currently shows | What it needs |
-|---|---|
-| (404) 000-0000 | add the real number |
-
-## `insights/questions-to-ask-a-sponsor.html` — 1 item
-
-| Currently shows | What it needs |
-|---|---|
-| (404) 000-0000 | add the real number |
-
-## `insights/real-estate-depreciation-explained.html` — 1 item
-
-| Currently shows | What it needs |
-|---|---|
-| (404) 000-0000 | add the real number |

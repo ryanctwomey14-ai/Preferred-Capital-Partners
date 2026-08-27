@@ -23,7 +23,7 @@ window.PCP_KB = {
     updated: '2026',
     fallback:
       'That is not something I can answer accurately. The team can — email ' +
-      '<a href="mailto:invest@prefcapitalpartners.com">invest@prefcapitalpartners.com</a> ' +
+      '<a href="mailto:tslaughter@prefcapitalpartners.com">tslaughter@prefcapitalpartners.com</a> ' +
       'or <a href="invest.html">request an introduction</a> and you will have a reply within one business day.',
     caveat:
       'Targets and terms are indicative, are not guaranteed, and are qualified in all respects by the ' +
@@ -73,7 +73,7 @@ window.PCP_KB = {
     /* --------------------------------------------------------------- terms */
     { id: 'minimum', t: 'Terms',
       k: 'minimum smallest amount how much invest entry ticket size start with 50000 50k',
-      a: 'The typical minimum is $50,000 per offering. It is set in each offering\'s documents and can vary. ' +
+      a: 'The typical minimum is $100,000 per offering. It is set in each offering\'s documents and can vary. ' +
          'If you are considering a first commitment below that, raise it on the introductory call.',
       src: 'invest.html#call', label: 'Investing', guard: true },
 
@@ -215,8 +215,8 @@ window.PCP_KB = {
       src: 'strategy.html#criteria', label: 'Acquisition criteria' },
 
     { id: 'markets', t: 'Strategy',
-      k: 'where markets cities locations geography southeast atlanta charlotte nashville greenville birmingham jacksonville states',
-      a: 'Six Southeastern submarkets: Atlanta, Charlotte, Nashville, Greenville, Birmingham and Jacksonville. ' +
+      k: 'where markets cities locations geography sunbelt charlotte houston sanantonio phoenix texas arizona carolina states',
+      a: 'Four Sun Belt submarkets: Charlotte, San Antonio, Houston and Phoenix. ' +
          'Market selection is reviewed annually, and the firm will exit a market entirely rather than force a ' +
          'deal to stay in it.',
       src: 'strategy.html#markets', label: 'Target markets' },
@@ -285,7 +285,7 @@ window.PCP_KB = {
     { id: 'firm', t: 'The firm',
       k: 'who are you about firm company background history team leadership managing partner terrence',
       a: 'Preferred Capital Partners is a private real estate investment firm that acquires and operates ' +
-         'multifamily assets in the Southeastern United States on behalf of accredited investors. Fund ' +
+         'multifamily assets in the Sun Belt on behalf of accredited investors. Fund ' +
          'administration, audit, tax, securities counsel and property management are handled by dedicated ' +
          'third parties, so investor records are not maintained solely by the people managing the properties.',
       src: 'about.html', label: 'About the firm' },
@@ -299,7 +299,7 @@ window.PCP_KB = {
 
     { id: 'contact', t: 'Contact',
       k: 'contact speak call talk human email phone reach someone person introduction meeting',
-      a: 'Email <a href="mailto:invest@prefcapitalpartners.com">invest@prefcapitalpartners.com</a>, ' +
+      a: 'Email <a href="mailto:tslaughter@prefcapitalpartners.com">tslaughter@prefcapitalpartners.com</a>, ' +
          'or <a href="invest.html">request an introduction</a> and you will have a reply within one business ' +
          'day. Introductory conversations are held by the managing partner.',
       src: 'contact.html', label: 'Contact' },
@@ -307,7 +307,7 @@ window.PCP_KB = {
     { id: 'broker', t: 'Contact',
       k: 'broker brokerage deal deals dealflow selling sell listing agent submit opportunity acquisitions pipeline',
       a: 'Brokers with multifamily opportunities in our markets should send them to ' +
-         '<a href="mailto:acquisitions@prefcapitalpartners.com">acquisitions@prefcapitalpartners.com</a>. ' +
+         '<a href="mailto:tslaughter@prefcapitalpartners.com">tslaughter@prefcapitalpartners.com</a>. ' +
          'The acquisition criteria are published so you can screen before sending.',
       src: 'strategy.html#criteria', label: 'Acquisition criteria' },
 
