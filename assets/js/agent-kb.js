@@ -79,8 +79,8 @@ window.PCP_KB = {
 
     { id: 'returns', t: 'Terms',
       k: 'return returns target irr arr yield how much do i make performance projections cash on cash equity multiple',
-      a: 'Current targets are an annualised return of 15–20%, cash-on-cash of 7–10%, an equity multiple of ' +
-         '1.8–2.2x and a hold period of three to seven years. These are underwriting targets, not results.',
+      a: 'Current targets are an annualised return of 16–22%, cash-on-cash of 7–10%, an equity multiple of ' +
+         '1.8–2.2x and a hold period of three to five years. These are underwriting targets, not results.',
       src: 'index.html', label: 'Target returns', guard: true },
 
     { id: 'preferred', t: 'Terms',
@@ -109,7 +109,7 @@ window.PCP_KB = {
 
     { id: 'hold', t: 'Terms',
       k: 'hold period how long timeline duration years when do i get capital back exit',
-      a: 'The target hold is three to seven years. Capital is returned on a sale or refinance, not on a fixed ' +
+      a: 'The target hold is three to five years. Capital is returned on a sale or refinance, not on a fixed ' +
          'date, and the hold can extend if selling into a weak market would damage the outcome.',
       src: 'strategy.html#criteria', label: 'Acquisition criteria', guard: true },
 
@@ -208,7 +208,7 @@ window.PCP_KB = {
     /* ------------------------------------------------------------ strategy */
     { id: 'whatyoubuy', t: 'Strategy',
       k: 'what do you buy assets properties type criteria box target acquisition units vintage class b',
-      a: 'Value-add workforce multifamily: 100–300 unit communities built between 1985 and 2010, B or B− class, ' +
+      a: 'Value-add workforce Multifamily: 50 to 150+ unit communities built between 1970 and 2000, B to C− class, ' +
          'stabilised above 85% occupancy at acquisition, with a rent gap of at least 12% between in-place ' +
          'rents and renovated comparables within two miles. Properties outside those parameters are not ' +
          'underwritten.',

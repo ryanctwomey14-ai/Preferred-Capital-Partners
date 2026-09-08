@@ -43,10 +43,10 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 
 | Currently shows | What it needs |
 |---|---|
-| 15–20% | forward-looking target; must be supported by your model and reviewed by counsel before launch |
+| 16–22% | forward-looking target; must be supported by your model and reviewed by counsel before launch |
 | 7–10% | forward-looking target; must be supported by your model and reviewed by counsel before launch |
 | 1.8–2.2x | forward-looking target; must be supported by your model and reviewed by counsel before launch |
-| 3–7 yrs | forward-looking target; must be supported by your model and reviewed by counsel before launch |
+| 3–5 yrs | forward-looking target; must be supported by your model and reviewed by counsel before launch |
 | 31 March | confirm K-1 delivery commitment |
 | 7–9% | confirm |
 | three to five years | confirm |
@@ -84,7 +84,7 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 | 94% | Replace with a verified value |
 | Oakbend Residences | replace with real asset |
 | 184 | Replace with a verified value |
-| 2004 | Replace with a verified value |
+| 1996 | Replace with a verified value |
 | 2024 | Replace with a verified value |
 | 96% | Replace with a verified value |
 | Summit Trace | replace with real asset |
