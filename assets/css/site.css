@@ -277,7 +277,14 @@ table { border-collapse: collapse; width: 100%; }
 }
 .nav--over .nav__wordmark span, .footer .nav__wordmark span { color: var(--gold-300); }
 .nav.is-stuck .nav__wordmark span { color: var(--gold-ink); }
-.nav__mark-fill { transition: fill 320ms var(--ease-out); }
+/* Brand mark. Same traced geometry the investor assistant uses, so the mark
+   next to the wordmark and the one on the launcher are the same drawing.
+   Over the hero it takes the assistant's on-dark palette; once the bar is
+   stuck against paper it reverts to the logo's own navy, forest and gold. */
+.nav__mark-fill, .nav__mark-forest, .nav__mark-gold { transition: fill 320ms var(--ease-out); }
+.nav__mark-fill   { fill: var(--ink); }
+.nav__mark-forest { fill: var(--forest); }
+.nav__mark-gold   { fill: var(--gold); }
 .nav__links { display: flex; align-items: center; gap: clamp(1rem, 2vw, 2rem); margin-left: auto; }
 .nav__links a {
   font-size: .9375rem; font-weight: 500; text-decoration: none; color: var(--ink);
@@ -297,7 +304,9 @@ table { border-collapse: collapse; width: 100%; }
 /* Over-hero (transparent) state */
 .nav--over .nav__wordmark b { color: var(--text-onDark); }
 .nav--over .nav__links a { color: var(--text-onDark); }
-.nav--over .nav__mark-fill { fill: var(--text-onDark); }
+.nav--over .nav__mark-fill   { fill: var(--text-onDark); }
+.nav--over .nav__mark-forest { fill: #7FBBA1; }
+.nav--over .nav__mark-gold   { fill: var(--gold-300); }
 .nav--over .nav-toggle span { background: var(--text-onDark); }
 .nav.is-stuck {
   background: rgba(245,243,237,.94);
@@ -308,7 +317,9 @@ table { border-collapse: collapse; width: 100%; }
 .nav.is-stuck .nav__wordmark b { color: var(--ink); }
 .nav.is-stuck .nav__links a { color: var(--ink); }
 .nav.is-stuck .nav__links a[aria-current="page"] { color: var(--forest); }
-.nav.is-stuck .nav__mark-fill { fill: var(--ink); }
+.nav.is-stuck .nav__mark-fill   { fill: var(--ink); }
+.nav.is-stuck .nav__mark-forest { fill: var(--forest); }
+.nav.is-stuck .nav__mark-gold   { fill: var(--gold); }
 .nav.is-stuck .nav-toggle span { background: var(--ink); }
 
 .nav-toggle {

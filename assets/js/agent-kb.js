@@ -68,7 +68,7 @@ window.PCP_KB = {
       a: 'If you are not an accredited investor you cannot participate in these offerings — that is a legal ' +
          'restriction, not a firm policy. You are welcome to review the investor materials and the strategy ' +
          'in the meantime, neither of which requires accreditation.',
-      src: 'strategy.html', label: 'Investment strategy' },
+      src: 'strategy.html', label: 'Investment Strategy' },
 
     /* --------------------------------------------------------------- terms */
     { id: 'minimum', t: 'Terms',
@@ -111,7 +111,7 @@ window.PCP_KB = {
       k: 'hold period how long timeline duration years when do i get capital back exit',
       a: 'The target hold is three to five years. Capital is returned on a sale or refinance, not on a fixed ' +
          'date, and the hold can extend if selling into a weak market would damage the outcome.',
-      src: 'strategy.html#criteria', label: 'Acquisition criteria', guard: true },
+      src: 'strategy.html#criteria', label: 'Acquisition Criteria', guard: true },
 
     /* ------------------------------------------------------- distributions */
     { id: 'distributions', t: 'Distributions',
@@ -126,7 +126,7 @@ window.PCP_KB = {
       a: 'Yes, distributions can be reduced or paused. If an asset needs capital — a roof, a wave of turnover, ' +
          'an insurance repricing — protecting the property comes before a distribution. When that happens it ' +
          'is reported in the quarter it happens, with the reason and the plan.',
-      src: 'faq.html', label: 'Investor questions', guard: true },
+      src: 'faq.html', label: 'Investor Questions', guard: true },
 
     /* ---------------------------------------------------------------- tax */
     { id: 'k1', t: 'Tax',
@@ -134,7 +134,7 @@ window.PCP_KB = {
       a: 'You receive a Schedule K-1 for each tax year in which you held an interest, reporting your share of ' +
          'income, expenses and depreciation. Delivery is targeted for 31 March. If a K-1 will be late you are ' +
          'told before you need to file, not after.',
-      src: 'faq.html', label: 'Investor questions' },
+      src: 'faq.html', label: 'Investor Questions' },
 
     { id: 'depreciation', t: 'Tax',
       k: 'depreciation tax benefit shelter write off cost segregation deduction paper loss taxable income',
@@ -158,21 +158,21 @@ window.PCP_KB = {
          'debt-financed real estate held in a retirement account can generate unrelated business taxable ' +
          'income (UBTI). That is worth reviewing with your CPA before subscribing. We will work through your ' +
          'custodian\'s paperwork with you.',
-      src: 'faq.html', label: 'Investor questions' },
+      src: 'faq.html', label: 'Investor Questions' },
 
     { id: 'statetax', t: 'Tax',
       k: 'state tax filing another state nonresident return multiple states',
       a: 'Possibly. Holding an interest in a partnership that owns property in another state can create a ' +
          'filing requirement there. The states involved are disclosed in each offering so your CPA can plan ' +
          'for it.',
-      src: 'faq.html', label: 'Investor questions' },
+      src: 'faq.html', label: 'Investor Questions' },
 
     { id: 'exchange', t: 'Tax',
       k: '1031 exchange like kind swap defer gain roll over',
       a: 'Generally not into a fund interest. A 1031 exchange requires a direct interest in real property, and ' +
          'a partnership interest does not qualify. Ask about the specific structure of a current offering ' +
          'rather than assuming either way.',
-      src: 'faq.html', label: 'Investor questions' },
+      src: 'faq.html', label: 'Investor Questions' },
 
     /* ---------------------------------------------------- risk & liquidity */
     { id: 'liquidity', t: 'Risk',
@@ -196,7 +196,7 @@ window.PCP_KB = {
          'the response may be pausing distributions, replacing the property manager, extending the hold, or in ' +
          'an extreme case selling at a loss. Capitalised reserves exist so that a difficult two years does not ' +
          'become a permanent loss.',
-      src: 'faq.html', label: 'Investor questions' },
+      src: 'faq.html', label: 'Investor Questions' },
 
     { id: 'leverage', t: 'Risk',
       k: 'leverage debt loan ltv mortgage financing bridge floating fixed rate agency',
@@ -212,7 +212,7 @@ window.PCP_KB = {
          'stabilised above 85% occupancy at acquisition, with a rent gap of at least 12% between in-place ' +
          'rents and renovated comparables within two miles. Properties outside those parameters are not ' +
          'underwritten.',
-      src: 'strategy.html#criteria', label: 'Acquisition criteria' },
+      src: 'strategy.html#criteria', label: 'Acquisition Criteria' },
 
     { id: 'markets', t: 'Strategy',
       k: 'where markets cities locations geography sunbelt charlotte houston sanantonio phoenix texas arizona carolina states',
@@ -241,7 +241,7 @@ window.PCP_KB = {
       a: 'No short-term floating-rate debt, no ground-up development or lease-up risk, no rent assumption that ' +
          'is not supported by a comparable unit already leasing at that number within two miles, and no fee ' +
          'structure that pays the sponsor before the preferred return.',
-      src: 'strategy.html', label: 'Investment strategy' },
+      src: 'strategy.html', label: 'Investment Strategy' },
 
     /* ----------------------------------------------------------- operations */
     { id: 'reporting', t: 'Operations',
@@ -249,7 +249,7 @@ window.PCP_KB = {
       a: 'A quarterly report per property or fund covering the operating statement, occupancy, renovation ' +
          'progress, variance against budget and a plain-language note on what changed — including what missed. ' +
          'Plus annual financial statements and your K-1. Everything is also available in the investor portal.',
-      src: 'portal.html', label: 'Investor portal' },
+      src: 'portal.html', label: 'Investor Portal' },
 
     { id: 'portal', t: 'Operations',
       k: 'portal login sign in account access dashboard statements documents',
@@ -257,7 +257,7 @@ window.PCP_KB = {
          'materials. It is hosted by the fund administrator, so your capital account is maintained ' +
          'independently of the people managing the properties. Access is granted after accreditation ' +
          'verification and your first subscription.',
-      src: 'portal.html', label: 'Investor portal' },
+      src: 'portal.html', label: 'Investor Portal' },
 
     { id: 'coinvest', t: 'Operations',
       k: 'co-invest skin in the game own money alignment does the sponsor invest',
@@ -279,7 +279,7 @@ window.PCP_KB = {
       a: 'You can subscribe personally or through an LLC, a revocable trust, a self-directed IRA or a solo ' +
          '401(k). The subscription documents accommodate each; tell us the intended holder on the ' +
          'introductory call so the paperwork is prepared correctly.',
-      src: 'faq.html', label: 'Investor questions' },
+      src: 'faq.html', label: 'Investor Questions' },
 
     /* ---------------------------------------------------------------- firm */
     { id: 'firm', t: 'The firm',
@@ -309,7 +309,7 @@ window.PCP_KB = {
       a: 'Brokers with multifamily opportunities in our markets should send them to ' +
          '<a href="mailto:tslaughter@prefcapitalpartners.com">tslaughter@prefcapitalpartners.com</a>. ' +
          'The acquisition criteria are published so you can screen before sending.',
-      src: 'strategy.html#criteria', label: 'Acquisition criteria' },
+      src: 'strategy.html#criteria', label: 'Acquisition Criteria' },
 
     /* -------------------------------------------------------------- limits */
     { id: 'advice', t: 'Limits',
