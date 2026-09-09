@@ -10,21 +10,10 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 
 > Performance claims, track record, and investor testimonials on a site that publicly markets a Reg D 506(c) offering are regulated communications. Do not launch with sample figures in place.
 
-**Total: 77 placeholders across 10 pages.**
+**Total: 69 placeholders across 8 pages.**
 
 ---
 
-## `about.html` — 7 items
-
-| Currently shows | What it needs |
-|---|---|
-| [Placeholder. Managing partner biography to be supplied: professional background, years in the industry, trans | replace with the approved biography |
-| [Placeholder — credential or role to be confirmed.] | confirm before launch |
-| [Placeholder — credential or role to be confirmed.] | confirm before launch |
-| [Administrator name] — independent capital accounts, distributions, and investor statements. | name your administrator |
-| [Accounting firm] — annual financial statements and K-1 preparation. | name your accountants |
-| [Law firm] — offering documents, Reg D filings, and compliance. | name your counsel |
-| [Management company] — regional operators selected per submarket and held to our reporting standard. | name your managers |
 
 ## `contact.html` — 2 items
 
@@ -33,11 +22,6 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 | (202) 412-8381 | add the real number |
 | [Street address]Charlotte, North Carolina [ZIP] | add the real address |
 
-## `disclosures.html` — 1 item
-
-| Currently shows | What it needs |
-|---|---|
-| [date] | set on publication |
 
 ## `index.html` — 7 items
 

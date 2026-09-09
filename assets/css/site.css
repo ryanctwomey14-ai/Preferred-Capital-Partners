@@ -683,8 +683,13 @@ table { border-collapse: collapse; width: 100%; }
 
 /* ---------- 15. Principal / bio ---------- */
 .principal__media { position: relative; }
-.principal__media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; filter: grayscale(.12) contrast(1.03); }
+.principal__media img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; filter: grayscale(.12) contrast(1.03); }
 .principal__frame { position: absolute; right: -14px; bottom: -14px; width: 60%; height: 60%; border: 1px solid var(--gold); z-index: -1; }
+.principal__creed {
+  font-family: var(--display); font-size: 1.25rem; line-height: 1.45; color: var(--forest);
+  margin-top: 1.75rem; padding-left: 1.25rem; border-left: 2px solid var(--gold);
+}
+@media (max-width: 640px) { .principal__creed { font-size: 1.12rem; padding-left: 1rem; } }
 .principal__sig { font-family: var(--display); font-style: italic; font-size: 1.5rem; color: var(--gold-ink); margin-top: 1.75rem; }
 .credential-list { display: grid; gap: .9rem; margin-top: 2rem; }
 .credential-list li { display: grid; grid-template-columns: 20px 1fr; gap: .85rem; font-size: var(--fs-small); align-items: start; }
@@ -809,7 +814,12 @@ table { border-collapse: collapse; width: 100%; }
 
 /* ---------- 17. Media blocks ---------- */
 .media-frame { position: relative; }
-.media-frame img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; }
+/* height:auto is load-bearing. The `height` attribute on an <img> lands in
+   the page as a real CSS declaration, and aspect-ratio only sizes an image
+   whose height is auto — so without this every framed photograph rendered at
+   its full pixel height (1280px for the markets aerial) and the crop was
+   silently ignored. */
+.media-frame img { width: 100%; height: auto; aspect-ratio: 5 / 4; object-fit: cover; }
 .media-frame--tall img { aspect-ratio: 4 / 5; }
 /* A landscape band. Used where the picture sits under a heading rather than
    beside it — a portrait crop in that position leaves a tall column of empty
@@ -1109,6 +1119,7 @@ table { border-collapse: collapse; width: 100%; }
 @media (max-width: 460px) {
   .om__specs { grid-template-columns: 1fr 1fr; gap: .75rem .75rem; }
   .footer__base { gap: .75rem; }
+
   .form-row { gap: 1rem; }
   .form { gap: 1.1rem; }
 }
@@ -1298,3 +1309,34 @@ table { border-collapse: collapse; width: 100%; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .divider { height: 1px; background: var(--line); border: 0; margin: 0; }
 .divider--dark { background: var(--line-dark); }
+
+/* ---------- 25. Touch targets ----------
+   Footer rows measured 30px, the brand lockup 34px, inline arrow links 28px
+   and the assistant's close button 32px — all under the 44px a thumb wants.
+   These are full-width or generously wide already, so height was the only
+   dimension short of the mark, and padding buys it without changing how any
+   of them reads. Keyed to the pointer rather than the viewport, because the
+   reason is the finger, not the screen — and to any-pointer rather than
+   pointer, because a tablet with a stylus or a touch laptop reports its
+   PRIMARY pointer as fine while still being touched. */
+@media (any-pointer: coarse) {
+  .footer__nav { gap: .35rem; }
+  .footer__nav a { padding-block: .65rem; }
+  .footer__base a, .footer__legal a { padding-block: .8rem; }
+  .nav__logo { padding-block: .35rem; }
+  .breadcrumb a { display: inline-block; padding-block: .6rem; }
+  .link-arrow { padding-block: .6rem; }
+  .pcp-agent__close { width: 42px; height: 42px; }
+  /* The consent box gates the enquiry form. Its label is a full
+     paragraph and toggles it, so the effective target is large — but
+     the box itself should still be tappable on its own. */
+  /* Email and phone links sit inline in running copy, where they measured
+     19-35px tall. Vertical padding on an inline element grows the hit box
+     without touching the line box, so these get a thumb-sized target and the
+     paragraph is unchanged. */
+  main p a[href^="mailto:"], main p a[href^="tel:"],
+  main dd a[href^="mailto:"], main dd a[href^="tel:"] { padding-block: .55rem; }
+
+  .checkline { grid-template-columns: 30px 1fr; }
+  .checkline input[type="checkbox"] { width: 28px; height: 28px; }
+}
