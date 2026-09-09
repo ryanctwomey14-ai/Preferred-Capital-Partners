@@ -34,7 +34,19 @@
 
 [[redirects]]
   from = "/disclosures.html"
-  to = "/terms.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/terms.html"
+  to = "/"
   status = 301
   force = true
 

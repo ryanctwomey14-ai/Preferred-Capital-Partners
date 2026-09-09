@@ -10,16 +10,10 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 
 > Performance claims, track record, and investor testimonials on a site that publicly markets a Reg D 506(c) offering are regulated communications. Do not launch with sample figures in place.
 
-**Total: 25 placeholders across 7 pages.**
+**Total: 19 placeholders across 4 pages.**
 
 ---
 
-
-## `contact.html` — 1 item
-
-| Currently shows | What it needs |
-|---|---|
-| [Street address]Charlotte, North Carolina [ZIP] | add the real address |
 
 
 ## `index.html` — 7 items
@@ -52,13 +46,6 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 | Sign in to the portal | point this at your portal provider |
 
 
-## `privacy.html` — 3 items
-
-| Currently shows | What it needs |
-|---|---|
-| [Confirm the specific analytics and advertising tools in use, and whether a consent mechanism is required for  | confirm which analytics and marketing tools are actually deployed, and add a consent banner if required for your audience |
-| [Counsel to confirm applicable state and international privacy regimes.] | counsel should confirm CCPA/CPRA, GDPR or other applicable regimes |
-| [date] | set on publication |
 
 ## `strategy.html` — 5 items
 
@@ -70,9 +57,3 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 | 8% | confirm preferred return |
 | 70 / 30 | confirm split |
 
-## `terms.html` — 2 items
-
-| Currently shows | What it needs |
-|---|---|
-| [State] | counsel to confirm governing law and venue |
-| [date] | set on publication |

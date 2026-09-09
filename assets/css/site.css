@@ -685,11 +685,13 @@ table { border-collapse: collapse; width: 100%; }
 .principal__media { position: relative; }
 .principal__media img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; filter: grayscale(.12) contrast(1.03); }
 .principal__frame { position: absolute; right: -14px; bottom: -14px; width: 60%; height: 60%; border: 1px solid var(--gold); z-index: -1; }
+/* Set at body size and in the body face so the biography reads as one block.
+   The gold rule and the forest colour carry the emphasis instead. */
 .principal__creed {
-  font-family: var(--display); font-size: 1.25rem; line-height: 1.45; color: var(--forest);
+  font-family: inherit; font-size: inherit; line-height: inherit; color: var(--forest);
   margin-top: 1.75rem; padding-left: 1.25rem; border-left: 2px solid var(--gold);
 }
-@media (max-width: 640px) { .principal__creed { font-size: 1.12rem; padding-left: 1rem; } }
+@media (max-width: 640px) { .principal__creed { padding-left: 1rem; } }
 .principal__sig { font-family: var(--display); font-style: italic; font-size: 1.5rem; color: var(--gold-ink); margin-top: 1.75rem; }
 .credential-list { display: grid; gap: .9rem; margin-top: 2rem; }
 .credential-list li { display: grid; grid-template-columns: 20px 1fr; gap: .85rem; font-size: var(--fs-small); align-items: start; }
