@@ -20,8 +20,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=29">
-<script>document.documentElement.className+=" js";</script>
+<link rel="stylesheet" href="assets/css/site.css?v=33">
+<script>document.documentElement.className+=" js";window.PCP_REVEAL_FAILSAFE=setTimeout(function(){document.documentElement.className=document.documentElement.className.replace(" js","");},4000);</script>
 
 </head>
 <body>
@@ -151,16 +151,14 @@
 <!-- Markets: proves the geography is a decision, not a default. -->
 <section class="section" id="markets">
   <div class="wrap">
-    <div class="grid grid--split mb-4">
-      <div>
-        <h2 class="display-l">Four markets.</h2>
-        <p class="lead mt-2">People and employers are moving to the Sun Belt faster than housing is being built for them. We invest where that gap is measurable at the submarket level &mdash; not where it makes a good headline. Four markets is a deliberate limit: it is the number we can walk regularly.</p>
-      </div>
-      <figure class="media-frame reveal" style="margin:0;">
-        <img src="assets/img/market-aerial.jpg" alt="Aerial view of Sun Belt suburban housing" width="1600" height="1280" loading="lazy">
-        <figcaption class="media-caption">Submarket tour &mdash; every market, on the ground, quarterly</figcaption>
-      </figure>
+    <div class="sec-head mb-3">
+      <h2 class="display-l">Four markets.</h2>
+      <p class="lead mt-2">People and employers are moving to the Sun Belt faster than housing is being built for them. We invest where that gap is measurable at the submarket level &mdash; not where it makes a good headline. Four markets is a deliberate limit: it is the number we can walk regularly.</p>
     </div>
+
+    <figure class="media-frame media-frame--band reveal mb-4" style="margin-inline:0;">
+      <img src="assets/img/market-aerial.jpg" alt="Aerial view of Sun Belt suburban housing" width="1600" height="1280" loading="lazy">
+    </figure>
 
     <div class="grid grid--4" data-stagger>
       <article class="pillar"><span class="pillar__num">NC</span><h3>Charlotte</h3><p>The second-largest banking centre in the country, with employment growth across financial services, energy and logistics, and household formation among the strongest of any major metro.</p></article>
@@ -207,42 +205,6 @@
   </div>
 </section>
 
-<!-- Risk section: the credibility multiplier. Stating risk plainly on the
-     strategy page (not buried in the footer) is what separates a fiduciary
-     tone from a promotional one, and it materially reduces later attrition. -->
-<section class="section" id="risk">
-  <div class="wrap">
-    <div class="grid grid--editorial">
-      <div>
-        <h2 class="display-l">Principal risks</h2>
-        <p class="lead mt-2">Each of the following has materially affected this asset class within the last five years. These risks are managed; they cannot be eliminated.</p>
-      </div>
-      <div class="benefits">
-        <div class="benefit">
-          <svg class="benefit__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M12 4v9"/><circle cx="12" cy="17.5" r="1"/><path d="M12 2 2 21h20L12 2Z"/></svg>
-          <div><h3>Interest rates and refinancing</h3><p>Higher rates raise borrowing costs and compress values. We mitigate with fixed or capped debt and terms that outlast the plan &mdash; but a refinancing window can still close.</p></div>
-        </div>
-        <div class="benefit">
-          <svg class="benefit__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M12 4v9"/><circle cx="12" cy="17.5" r="1"/><path d="M12 2 2 21h20L12 2Z"/></svg>
-          <div><h3>New supply</h3><p>A wave of deliveries in a submarket can stall rent growth. We underwrite the construction pipeline within three miles and discount rent growth accordingly.</p></div>
-        </div>
-        <div class="benefit">
-          <svg class="benefit__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M12 4v9"/><circle cx="12" cy="17.5" r="1"/><path d="M12 2 2 21h20L12 2Z"/></svg>
-          <div><h3>Operating cost inflation</h3><p>Insurance, taxes, and payroll have repriced sharply. We budget above trend and re-assess property tax exposure at every reassessment cycle.</p></div>
-        </div>
-        <div class="benefit">
-          <svg class="benefit__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M12 4v9"/><circle cx="12" cy="17.5" r="1"/><path d="M12 2 2 21h20L12 2Z"/></svg>
-          <div><h3>Illiquidity</h3><p>There is no secondary market for your interest. If your circumstances change mid-hold, you cannot sell. This is the real cost of the tax treatment and control you gain.</p></div>
-        </div>
-        <div class="benefit">
-          <svg class="benefit__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true"><path d="M12 4v9"/><circle cx="12" cy="17.5" r="1"/><path d="M12 2 2 21h20L12 2Z"/></svg>
-          <div><h3>Execution risk</h3><p>Renovations run over. Managers underperform. Business plans slip. We report it in the quarter it happens rather than the quarter it resolves.</p></div>
-        </div>
-      </div>
-    </div>
-    <p class="micro muted mt-4">This summary is not a complete statement of risks. Each offering's private placement memorandum contains the full risk disclosure, which you should read before investing. <a href="disclosures.html" style="text-underline-offset:3px;">Read our full disclosures</a>.</p>
-  </div>
-</section>
 
 <section class="section cta-band">
   <div class="cta-band__media"><img src="assets/img/amenity-pool.jpg" alt="" aria-hidden="true" loading="lazy"></div>
@@ -285,8 +247,6 @@
         <nav class="footer__nav" aria-label="Firm">
           <a href="about.html">About</a>
           <a href="strategy.html">Investment Strategy</a>
-          <a href="portfolio.html">Portfolio</a>
-          <a href="insights/">Insights</a>
         </nav>
       </div>
       <div>
@@ -295,7 +255,6 @@
           <a href="invest.html">Start Investing</a>
           <a href="invest.html#packet">Investor Materials</a>
           <a href="faq.html">FAQ</a>
-          <a href="portal.html">Investor Portal</a>
         </nav>
       </div>
       <div>
@@ -304,7 +263,6 @@
           <a href="contact.html">Contact Us</a>
           <a href="mailto:tslaughter@prefcapitalpartners.com">tslaughter@prefcapitalpartners.com</a>
           <a href="tel:+12024128381">(202) 412-8381</a>
-          <a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a>
         </nav>
       </div>
     </div>
@@ -314,7 +272,6 @@
     <div class="footer__base">
       <span>&copy; <span data-year>2026</span> Preferred Capital Partners. All rights reserved.</span>
       <span class="footer__legal">
-        <a href="disclosures.html">Disclosures</a>
         <a href="privacy.html">Privacy policy</a>
         <a href="terms.html">Terms of use</a>
       </span>
@@ -322,8 +279,8 @@
   </div>
 </footer>
 
-<script src="assets/js/site.js?v=29" defer></script>
-<script src="assets/js/agent-kb.js?v=29" defer></script>
-<script src="assets/js/agent.js?v=29" defer></script>
+<script src="assets/js/site.js?v=33" defer></script>
+<script src="assets/js/agent-kb.js?v=33" defer></script>
+<script src="assets/js/agent.js?v=33" defer></script>
 </body>
 </html>

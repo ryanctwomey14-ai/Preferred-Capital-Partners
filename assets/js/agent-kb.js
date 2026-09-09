@@ -180,7 +180,7 @@ window.PCP_KB = {
       a: 'You cannot. There is no public market for these interests and no redemption programme. Capital is ' +
          'committed until a sale or refinance returns it. That illiquidity is the price of the tax treatment ' +
          'and control you gain, and it means you should only commit capital you will not need during the hold.',
-      src: 'strategy.html#risk', label: 'Principal risks' },
+      src: 'faq.html', label: 'Investor Questions' },
 
     { id: 'risks', t: 'Risk',
       k: 'risk risks lose money downside what could go wrong safe guarantee protection worst case',
@@ -188,7 +188,7 @@ window.PCP_KB = {
          'cost inflation — insurance especially — illiquidity, and execution risk on renovation and ' +
          'management. These are managed, not eliminated. Private real estate can lose value, including the ' +
          'total loss of invested capital.',
-      src: 'strategy.html#risk', label: 'Principal risks' },
+      src: 'faq.html', label: 'Investor Questions' },
 
     { id: 'underperform', t: 'Risk',
       k: 'underperform miss plan behind budget bad quarter problem trouble deal goes wrong',
@@ -248,16 +248,16 @@ window.PCP_KB = {
       k: 'reporting reports updates communication transparency what do i receive quarterly statement',
       a: 'A quarterly report per property or fund covering the operating statement, occupancy, renovation ' +
          'progress, variance against budget and a plain-language note on what changed — including what missed. ' +
-         'Plus annual financial statements and your K-1. Everything is also available in the investor portal.',
-      src: 'portal.html', label: 'Investor Portal' },
+         'Plus annual financial statements and your K-1.',
+      src: 'faq.html', label: 'Investor Questions' },
 
     { id: 'portal', t: 'Operations',
       k: 'portal login sign in account access dashboard statements documents',
-      a: 'The investor portal holds quarterly reports, distribution history, tax documents and current offering ' +
-         'materials. It is hosted by the fund administrator, so your capital account is maintained ' +
-         'independently of the people managing the properties. Access is granted after accreditation ' +
-         'verification and your first subscription.',
-      src: 'portal.html', label: 'Investor Portal' },
+      a: 'Quarterly reports, distribution history, tax documents and current offering materials are issued ' +
+         'to investors directly. Your capital account is maintained by the fund administrator, independently ' +
+         'of the people managing the properties. Write to tslaughter@prefcapitalpartners.com if you need a ' +
+         'copy of anything.',
+      src: 'contact.html', label: 'Contact Us' },
 
     { id: 'coinvest', t: 'Operations',
       k: 'co-invest skin in the game own money alignment does the sponsor invest',
@@ -317,7 +317,7 @@ window.PCP_KB = {
       a: 'I cannot answer that, and neither can the firm — Preferred Capital Partners is not a registered ' +
          'investment adviser, and nothing on this site is investment, legal or tax advice. Whether this suits ' +
          'your circumstances is a question for your own advisers, working from the offering documents.',
-      src: 'disclosures.html', label: 'Disclosures' },
+      src: 'faq.html', label: 'Investor Questions' },
 
     { id: 'guarantee', t: 'Limits',
       k: 'guarantee guaranteed promise sure thing safe cant lose principal protected insured',
@@ -325,6 +325,6 @@ window.PCP_KB = {
          'incorrect, and private real estate can lose value including the total loss of invested capital. Any ' +
          'sponsor describing a fixed return on a private real estate deal is describing something they cannot ' +
          'promise.',
-      src: 'disclosures.html', label: 'Disclosures' }
+      src: 'faq.html', label: 'Investor Questions' }
   ]
 };

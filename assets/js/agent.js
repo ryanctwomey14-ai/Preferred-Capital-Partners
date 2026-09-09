@@ -241,7 +241,7 @@
         '</button>' +
       '</form>' +
       '<p class="pcp-agent__foot">Answers are drawn from published material and are qualified by the ' +
-        '<a href="disclosures.html">offering documents and disclosures</a>.</p>' +
+        'definitive offering documents.</p>' +
     '</section>';
   document.body.appendChild(root);
 

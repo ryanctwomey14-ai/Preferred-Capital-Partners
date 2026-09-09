@@ -811,6 +811,13 @@ table { border-collapse: collapse; width: 100%; }
 .media-frame { position: relative; }
 .media-frame img { width: 100%; aspect-ratio: 5 / 4; object-fit: cover; }
 .media-frame--tall img { aspect-ratio: 4 / 5; }
+/* A landscape band. Used where the picture sits under a heading rather than
+   beside it — a portrait crop in that position leaves a tall column of empty
+   paper next to the copy. Shortens toward 2:1 on handsets so the band stays a
+   band and does not become a square. */
+.media-frame--band img { aspect-ratio: 24 / 7; }
+@media (max-width: 880px) { .media-frame--band img { aspect-ratio: 16 / 7; } }
+@media (max-width: 640px) { .media-frame--band img { aspect-ratio: 2 / 1; } }
 .media-caption {
   font-family: var(--label); font-size: .6875rem; letter-spacing: .14em; text-transform: uppercase;
   color: var(--text-muted); margin-top: .9rem; display: flex; gap: .6rem; align-items: center;
@@ -981,16 +988,31 @@ table { border-collapse: collapse; width: 100%; }
    by script so the markup stays clean, and scoped behind `.js` so the page is
    fully visible if the script never runs. */
 
+/* Matched by selector, not by a class the script adds after load. That
+   ordering was the bug: the heading painted visible, the script then hid it,
+   and it spent the next second animating OUT. Anything the reader scrolled to
+   inside that window was already on screen when its reveal fired, so it never
+   appeared to arrive — it only looked right on a refresh, where the heading
+   happened to be below the fold before the class landed. Hidden from the
+   first style resolution, every heading now arrives when it is reached. */
+.js main section:not(.hero) h2,
 .js .rv-head {
   opacity: 0; transform: translateY(16px); clip-path: inset(0 0 105% 0);
   transition: opacity 820ms var(--ease-out),
               transform 900ms var(--ease-out),
               clip-path 1050ms var(--ease-out);
 }
+.js main section:not(.hero) h2.is-in,
 .js .rv-head.is-in { opacity: 1; transform: none; clip-path: inset(0 0 -30% 0); }
 
+.js .media-frame, .js .om__media, .js .insight-card__media, .js .principal__media,
 .js .rv-media { clip-path: inset(0 100% 0 0); transition: clip-path 1150ms var(--ease-out); }
+.js .media-frame.is-in, .js .om__media.is-in, .js .insight-card__media.is-in,
+.js .principal__media.is-in,
 .js .rv-media.is-in { clip-path: inset(0 0 0 0); }
+/* The map draws itself in; a wipe would fight it. */
+.js .usmap-figure .media-frame,
+.js .usmap-figure .media-frame.is-in { clip-path: none; transition: none; }
 
 /* The numbered rule beside each step extends as the sequence arrives. */
 .js .step__num::after { transform: scaleX(0); transform-origin: left center; transition: transform 760ms var(--ease-out); }
@@ -1021,7 +1043,9 @@ table { border-collapse: collapse; width: 100%; }
 @media (hover: hover) and (pointer: fine) { .acc:hover::after { transform: scaleX(1); } }
 
 @media (prefers-reduced-motion: reduce) {
+  .js main section:not(.hero) h2, .js main section:not(.hero) h2.is-in,
   .js .rv-head, .js .rv-head.is-in { clip-path: none; transform: none; transition: opacity 300ms linear; }
+  .js .media-frame, .js .om__media, .js .insight-card__media, .js .principal__media,
   .js .rv-media, .js .rv-media.is-in { clip-path: none; transition: none; }
   .js .step__num::after, .js .steps.is-in .step__num::after { transform: scaleX(1); transition: none; }
   .js .pagehead__media, .js .pagehead.is-ready .pagehead__media { opacity: .3; transform: none; transition: none; }

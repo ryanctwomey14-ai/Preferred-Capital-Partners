@@ -3,6 +3,11 @@
 (function () {
   'use strict';
 
+  /* The head script adds `js` (which arms every hidden reveal state) and a
+     timer that strips it again. Reaching here means this file loaded, so the
+     timer is cancelled and the reveals stay armed. */
+  if (window.PCP_REVEAL_FAILSAFE) { clearTimeout(window.PCP_REVEAL_FAILSAFE); }
+
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---- 1. Hero entrance -------------------------------------------------
@@ -104,22 +109,25 @@
      entrance classes are applied here rather than in the markup so the HTML
      stays free of presentation hooks. */
 
-  /* Display headings resolve from behind a mask. The hero runs its own
-     orchestration, and the page title is handled by the header entrance. */
-  Array.prototype.forEach.call(
-    document.querySelectorAll('main section h2'),
-    function (h) { if (!h.closest('.hero')) { h.classList.add('rv-head'); } });
+  /* The hidden state for headings and media now lives in the stylesheet and
+     is matched by selector, so it applies at first paint. This script only
+     decides WHEN each one arrives. */
+  var revealTargets = document.querySelectorAll(
+    '.reveal, [data-stagger], .rule, .steps, .rv-head, .rv-media, ' +
+    'main section:not(.hero) h2, ' +
+    '.media-frame, .om__media, .insight-card__media, .principal__media');
 
-  /* Media wipes open from one edge. The map is excluded — it has its own
-     draw-in and a clip would fight it. */
-  Array.prototype.forEach.call(
-    document.querySelectorAll('.media-frame, .om__media, .insight-card__media, .principal__media'),
-    function (m) { if (!m.closest('.usmap-figure')) { m.classList.add('rv-media'); } });
-
-  var revealTargets = document.querySelectorAll('.reveal, [data-stagger], .rule, .rv-head, .rv-media, .steps');
-  if (!('IntersectionObserver' in window)) {
+  var showAll = function () {
     Array.prototype.forEach.call(revealTargets, function (el) { el.classList.add('is-in'); });
+  };
+
+  if (!('IntersectionObserver' in window)) {
+    showAll();
   } else {
+    /* threshold 0 rather than a fraction: a section taller than the viewport
+       can never reach a ratio threshold, and would sit hidden forever. The
+       negative bottom margin is what delays the reveal until the element is
+       properly on screen. */
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -127,21 +135,41 @@
           io.unobserve(entry.target);
         }
       });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
-    Array.prototype.forEach.call(revealTargets, function (el) { io.observe(el); });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0 });
 
-    /* Safety net. If the observer never delivers — a throttled background tab,
-       a restored bfcache page, an engine quirk — anything already on screen is
-       revealed anyway. Content is never left invisible. */
-    window.setTimeout(function () {
+    var observeAll = function () {
+      Array.prototype.forEach.call(revealTargets, function (el) {
+        if (!el.classList.contains('is-in')) { io.observe(el); }
+      });
+    };
+    observeAll();
+
+    /* Coming back with the browser's back button restores the page from
+       bfcache with every is-in class still on it, so nothing arrives a second
+       time — the effect only returned on a hard refresh. Clear the flag from
+       anything that is off screen again and re-arm those. */
+    window.addEventListener('pageshow', function (e) {
+      if (!e.persisted) { return; }
+      Array.prototype.forEach.call(revealTargets, function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top > window.innerHeight || r.bottom < 0) { el.classList.remove('is-in'); }
+      });
+      observeAll();
+    });
+
+    /* Safety net: reveal only what is genuinely on screen, so content is never
+       left invisible — but nothing below the fold is spent early. */
+    var sweep = function () {
       Array.prototype.forEach.call(revealTargets, function (el) {
         if (el.classList.contains('is-in')) { return; }
-        if (el.getBoundingClientRect().top < window.innerHeight) {
+        var r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 0.92 && r.bottom > 0) {
           el.classList.add('is-in');
           io.unobserve(el);
         }
       });
-    }, 1500);
+    };
+    window.setTimeout(sweep, 1500);
   }
 
   /* ---- 5. Accordion (FAQ) -----------------------------------------------
