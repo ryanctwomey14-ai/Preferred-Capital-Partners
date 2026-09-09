@@ -409,16 +409,40 @@
   function open() {
     markSeen();
     panel.hidden = false;
-    /* Two frames so the opening transition has a starting state to run from.
-       The visible state lives entirely in `is-open`, so if those frames never
-       arrive — a throttled tab, a browser that has stopped compositing, an
-       engine quirk — the panel would sit un-hidden at zero opacity and the
-       assistant would look broken rather than open. The timeout guarantees the
-       class lands either way; whichever runs first wins and the other is a
+
+    /* An element leaving display:none has no resolved previous style, so a
+       transition has nothing to interpolate from. Reading a layout property
+       forces the browser to resolve the closed state first, which gives the
+       opacity and transform transitions a real starting point. Without this
+       the panel opened logically — is-open applied, hidden cleared — and then
+       sat at zero opacity, which on a phone reads as "it does not open".
+       Desktop happened to get away with it; a handset did not. */
+    void panel.offsetHeight;
+
+    /* The visible state lives entirely in `is-open`, so if the frames never
+       arrive — a throttled tab, a browser that has stopped compositing — the
+       class still has to land. Whichever fires first wins; the other is a
        no-op. */
     var reveal = function () { root.classList.add('is-open'); };
     requestAnimationFrame(function () { requestAnimationFrame(reveal); });
     window.setTimeout(reveal, 120);
+
+    /* Last resort. If the transition still has not carried the panel to full
+       opacity once it should long since have finished, stop trusting it and
+       set the end state directly. An assistant that is open but invisible is
+       worse than one that appears without an animation. */
+    window.setTimeout(function () {
+      if (!root.classList.contains('is-open')) { return; }
+      if (parseFloat(window.getComputedStyle(panel).opacity) < 0.9) {
+        /* Kill the transition before forcing the values. Assigning opacity on
+           its own would just start another transition through the very
+           machinery that has already failed to run, which leaves the panel
+           exactly as invisible as before. */
+        panel.style.transition = 'none';
+        panel.style.opacity = '1';
+        panel.style.transform = 'none';
+      }
+    }, 420);
     launch.setAttribute('aria-expanded', 'true');
     if (!started) {
       started = true;
@@ -429,6 +453,11 @@
   }
 
   function close() {
+    /* Clear anything the safety net forced, so the closing transition has a
+       clean state to run from and the next open starts fresh. */
+    panel.style.transition = '';
+    panel.style.opacity = '';
+    panel.style.transform = '';
     root.classList.remove('is-open');
     launch.setAttribute('aria-expanded', 'false');
     window.setTimeout(function () { panel.hidden = true; }, reduceMotion ? 0 : 260);
