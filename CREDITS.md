@@ -41,19 +41,15 @@ Attribution is recorded here for traceability, not obligation.
 | File | Unsplash photo ID |
 |---|---|
 | `hero-market.jpg` | `photo-1470723710355-95304d8aece4` |
-| `asset-riverstone.jpg` | `photo-1460317442991-0ec209397118` |
 | `asset-oakbend.jpg` | `photo-1515263487990-61b07816b324` |
 | `asset-summit.jpg` | `photo-1580216643062-cf460548a66a` |
 | `asset-legacy.jpg` | `photo-1545324418-cc1a3fa10c00` |
-| `interior-renovated.jpg` | `photo-1554995207-c18c203602cb` |
 | `interior-modern.jpg` | `photo-1600607687939-ce8a6c25118c` |
-| `amenity-lounge.jpg` | `photo-1524758631624-e2822e304c36` |
 | `amenity-pool.jpg` | `photo-1600596542815-ffad4c1539a9` |
 | `market-aerial.jpg` | `photo-1512699355324-f07e3106dae5` |
 | `capital-towers.jpg` | `photo-1449157291145-7efd050a4d0e` |
-| `underwriting.jpg` | `photo-1542621334-a254cf47733d` |
 
-> **This matters beyond aesthetics.** These images sit next to named properties, unit counts, and
-> occupancy figures. On a site that publicly markets a securities offering, presenting stock photography
-> alongside specific property claims is misleading. Replace every one with photography of assets the firm
-> actually owns before launch, or remove the property cards until real photography exists.
+> These are now used only as page-header and section atmosphere. The portfolio page that paired them with
+> named properties, unit counts and occupancy figures has been deleted, which removes the misleading
+> juxtaposition. They should still be replaced with the firm's own photography when it exists, but no
+> image now sits beside a specific property claim.

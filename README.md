@@ -24,7 +24,6 @@ Then open <http://localhost:4387>. Any static server works; the site has no serv
 ```
 index.html              Homepage — the full conversion narrative
 strategy.html           Investment strategy
-portfolio.html          Holdings, realized exits, case study
 about.html              Firm and principal
 invest.html             Primary conversion page (call + packet + eligibility)
 faq.html                21 questions in 5 groups
@@ -34,18 +33,6 @@ disclosures.html        Securities disclosures
 privacy.html            Privacy policy
 terms.html              Terms of use
 404.html                Not-found recovery page
-insights/
-  index.html            Education hub
-  multifamily-inflation-hedge.html
-  real-estate-depreciation-explained.html
-  questions-to-ask-a-sponsor.html
-assets/
-  css/site.css          The entire design system, in 24 commented sections
-  js/site.js            ~170 lines: nav, drawer, reveals, accordion, forms
-  img/                  Photography, logo, headshot, favicon
-robots.txt
-sitemap.xml
-```
 
 Each page's HTML carries comment blocks above every section explaining what that section is for and how it
 affects conversion. Read those before restructuring anything.
@@ -118,7 +105,6 @@ one, change all sixteen. The blocks to keep in sync are:
 - `<header class="nav">` … through the end of `<div class="drawer">`
 - `<footer class="footer">` … including the disclosure paragraph
 
-The pages inside `insights/` use `../` prefixes on asset and link paths; the root pages do not.
 
 ### Placeholder styling
 Unverified values render with a dotted gold underline. Once `PLACEHOLDERS.md` is cleared, delete this rule
@@ -133,7 +119,7 @@ from `assets/css/site.css` to remove the styling everywhere:
 ## Wiring the forms
 
 There are five forms: intro call and packet (`invest.html`), contact (`contact.html`), newsletter
-(`insights/index.html`). All carry `data-validate`, which enables inline validation, error placement below
+All carry `data-validate`, which enables inline validation, error placement below
 the field, focus management on the first invalid field, and a success state.
 
 **While no `action` is set,** the script prevents submission and shows the inline confirmation panel — so

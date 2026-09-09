@@ -143,14 +143,14 @@ window.PCP_KB = {
          'you received. Many offerings accelerate it with a cost segregation study. Whether it offsets your ' +
          'other income depends on the passive activity rules and your own circumstances — a question for your ' +
          'CPA.',
-      src: 'insights/real-estate-depreciation-explained.html', label: 'How depreciation works' },
+      src: 'faq.html', label: 'Investor Questions' },
 
     { id: 'recapture', t: 'Tax',
       k: 'recapture depreciation recapture pay it back sale taxed later deferral 25%',
       a: 'Depreciation reduces your cost basis, so on sale the portion of gain attributable to depreciation is ' +
          'recaptured and taxed — currently at a maximum federal rate of 25%. It is a deferral rather than a ' +
          'permanent exemption, which is the part most summaries leave out.',
-      src: 'insights/real-estate-depreciation-explained.html', label: 'How depreciation works' },
+      src: 'faq.html', label: 'Investor Questions' },
 
     { id: 'ubti', t: 'Tax',
       k: 'ira 401k self directed retirement account ubti unrelated business taxable income solo roth custodian',
@@ -234,7 +234,7 @@ window.PCP_KB = {
          'bond\'s ten or an office lease\'s fifteen. Combined with long-term fixed-rate debt, rents adjust while ' +
          'the mortgage payment does not. Values are set by property income rather than equity market ' +
          'sentiment, which is what gives the allocation its diversifying role.',
-      src: 'insights/multifamily-inflation-hedge.html', label: 'Why apartments reprice' },
+      src: 'faq.html', label: 'Investor Questions' },
 
     { id: 'wontdo', t: 'Strategy',
       k: 'dont avoid never wont refuse exclude exclusions restrictions development ground up construction speculative bridge',
@@ -292,10 +292,11 @@ window.PCP_KB = {
 
     { id: 'trackrecord', t: 'The firm',
       k: 'track record past performance history results previous deals realised exits case study experience',
-      a: 'Current holdings and realised investments are set out on the portfolio page, including an ' +
-         'underwritten-versus-actual comparison on a full-cycle asset. Past performance is not indicative of ' +
-         'future results, and property-level figures are unaudited unless stated otherwise.',
-      src: 'portfolio.html', label: 'Portfolio', guard: true },
+      a: 'The managing partner spent 15 years in corporate financial planning and analysis before moving ' +
+         'into multifamily, so the underwriting discipline is long-standing while the firm itself is early. ' +
+         'Rather than point you at a summary, ask for the specifics directly and they will be provided in ' +
+         'writing: tslaughter@prefcapitalpartners.com.',
+      src: 'about.html', label: 'About the firm', guard: true },
 
     { id: 'contact', t: 'Contact',
       k: 'contact speak call talk human email phone reach someone person introduction meeting',

@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+# portal.html is no longer linked from anywhere on the site and is kept only
+# so a real portal can be wired to it later.
 Disallow: /portal.html
 
 Sitemap: https://prefcapitalpartners.com/sitemap.xml

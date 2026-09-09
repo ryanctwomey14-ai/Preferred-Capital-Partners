@@ -10,7 +10,7 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 
 > Performance claims, track record, and investor testimonials on a site that publicly markets a Reg D 506(c) offering are regulated communications. Do not launch with sample figures in place.
 
-**Total: 68 placeholders across 8 pages.**
+**Total: 25 placeholders across 7 pages.**
 
 ---
 
@@ -51,53 +51,6 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 |---|---|
 | Sign in to the portal | point this at your portal provider |
 
-## `portfolio.html` — 43 items
-
-| Currently shows | What it needs |
-|---|---|
-| $120M | Replace with a verified value |
-| 1,480 | Replace with a verified value |
-| 2 | Replace with a verified value |
-| 94% | Replace with a verified value |
-| 31 December | set reporting date |
-| Riverstone Commons | replace with real asset |
-| 216 | Replace with a verified value |
-| 1998 | Replace with a verified value |
-| 2023 | Replace with a verified value |
-| 94% | Replace with a verified value |
-| Oakbend Residences | replace with real asset |
-| 184 | Replace with a verified value |
-| 1996 | Replace with a verified value |
-| 2024 | Replace with a verified value |
-| 96% | Replace with a verified value |
-| Summit Trace | replace with real asset |
-| 148 | Replace with a verified value |
-| 1994 | Replace with a verified value |
-| 2022 | Replace with a verified value |
-| 93% | Replace with a verified value |
-| Legacy Park | replace with real asset |
-| 132 | Replace with a verified value |
-| 2019–2024 | Replace with a verified value |
-| 1.8x | Replace with a verified value |
-| 16.4% | Replace with a verified value |
-| Harper Mill | replace with real asset |
-| 96 | Replace with a verified value |
-| 2018–2023 | Replace with a verified value |
-| 1.6x | Replace with a verified value |
-| 14.1% | Replace with a verified value |
-| Legacy Park | replace with a real case study |
-| 132 units, Phoenix, Arizona. Acquired 2019 at $71,000 per unit — roughly 45% below replacement cost. Held five | Replace with a verified value |
-| 5 years | Replace with a verified value |
-| 5 years | Replace with a verified value |
-| 104 | Replace with a verified value |
-| 118 | Replace with a verified value |
-| $165 / month | Replace with a verified value |
-| $189 / month | Replace with a verified value |
-| 44% | Replace with a verified value |
-| 47% | Replace with a verified value |
-| 1.7x | Replace with a verified value |
-| 1.8x | Replace with a verified value |
-| 62% | Replace with a verified value |
 
 ## `privacy.html` — 3 items
 

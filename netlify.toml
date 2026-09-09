@@ -9,6 +9,35 @@
   command = ""
   functions = "functions"
 
+# --- Retired pages -----------------------------------------------------------
+# Portfolio and the insights hub were published and are indexed, so the old
+# URLs are redirected rather than left to 404. 301 tells search engines the
+# move is permanent and passes the accumulated signal to the destination.
+
+[[redirects]]
+  from = "/portfolio.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insights"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insights/*"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/disclosures.html"
+  to = "/terms.html"
+  status = 301
+  force = true
+
 # --- Caching -----------------------------------------------------------------
 # Stylesheet and script URLs carry a ?v= query that is bumped on every change,
 # so they can be cached hard. Media has no version in its filename, so it gets
