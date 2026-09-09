@@ -10,16 +10,15 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 
 > Performance claims, track record, and investor testimonials on a site that publicly markets a Reg D 506(c) offering are regulated communications. Do not launch with sample figures in place.
 
-**Total: 69 placeholders across 8 pages.**
+**Total: 68 placeholders across 8 pages.**
 
 ---
 
 
-## `contact.html` — 2 items
+## `contact.html` — 1 item
 
 | Currently shows | What it needs |
 |---|---|
-| (202) 412-8381 | add the real number |
 | [Street address]Charlotte, North Carolina [ZIP] | add the real address |
 
 
