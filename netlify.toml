@@ -9,6 +9,20 @@
   command = ""
   functions = "functions"
 
+# --- Assistant endpoint ------------------------------------------------------
+# The front end calls /api/agent in both environments. Locally dev-server.py
+# answers that path directly; here it is forwarded to the function, so the same
+# JavaScript works in development and production with no build-time switch.
+# The function is inert until ANTHROPIC_API_KEY is set in the Netlify dashboard
+# and the assistant falls back to its knowledge base, so this is safe to ship
+# before the key exists.
+
+[[redirects]]
+  from = "/api/agent"
+  to = "/.netlify/functions/agent"
+  status = 200
+  force = true
+
 # --- Retired pages -----------------------------------------------------------
 # Portfolio and the insights hub were published and are indexed, so the old
 # URLs are redirected rather than left to 404. 301 tells search engines the

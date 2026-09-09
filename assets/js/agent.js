@@ -23,6 +23,13 @@
   if (!KB || !document.body) { return; }
 
   var CFG = window.PCP_AGENT || {};
+  /* One endpoint path for both environments. Locally dev-server.py answers it;
+     in production a Netlify redirect forwards /api/agent to the function. If
+     neither is there the first call fails and the latch below stops us
+     retrying, so every later question goes straight to the knowledge base
+     with no wasted round trip. */
+  if (!('endpoint' in CFG)) { CFG.endpoint = '/api/agent'; }
+  var modelDown = false;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---- Retrieval --------------------------------------------------------
@@ -93,7 +100,13 @@
     row.keys.forEach(function (k) { if (!seen[k]) { seen[k] = 1; DF[k] = (DF[k] || 0) + 1; } });
   });
   var N = INDEX.length;
-  function idf(w) { return Math.log(1 + N / (1 + (DF[w] || 0))); }
+  function idf(w) {
+    /* A term no entry lists carries no evidence, so it is damped rather than
+       treated as the rarest and most decisive word in the corpus. Without
+       this, one sloppy prefix match could clear the answer threshold alone. */
+    if (!DF[w]) { return 0.9; }
+    return Math.log(1 + N / (1 + DF[w]));
+  }
 
   /* Certain intents must not be left to word overlap. A request for a
      recommendation has to reach the disclaimer, not the entry that happens to
@@ -103,7 +116,24 @@
     [/\b(guarantee|guaranteed|risk[- ]?free|can'?t lose|principal protected|insured|promise)\b/i, 'guarantee'],
     [/\b(speak (to|with)|talk to|contact you|reach (you|someone)|real person|human|book a call|get in touch)\b/i, 'contact'],
     [/\b(not accredited|non[- ]accredited|don'?t qualify|do not qualify)\b/i, 'notaccredited'],
-    [/\b(i have (a|an)|to sell you|selling a|off.?market|bring you a deal|submit a deal|i represent)\b/i, 'broker']
+    [/\b(i have (a|an)|to sell you|selling a|off.?market|bring you a deal|submit a deal|i represent)\b/i, 'broker'],
+    /* Every suggested prompt has to land. "Who can invest?" is weak or
+       stopped in every word, so overlap alone can never answer it. And a
+       few firm entries are now shadowed by the general ones that share
+       their vocabulary, so the specific reading is pinned here. */
+    [/\b(who can invest|who is (this|it) for|am i eligible|can i invest|eligib)/i, 'accredited'],
+    [/\b(what markets|which markets|where do you (buy|invest|operate)|what cities|which cities)\b/i, 'markets'],
+    [/\b(how does a syndication|what is a syndication|what\'?s a syndication)\b/i, 'g-syndication'],
+    [/\b(cost seg|cost segregation|bonus depreciation)\b/i, 'g-costseg'],
+    [/\b(506 ?\(?[bc]\)?|reg(ulation)? d)\b/i, 'g-regd'],
+    [/\b(capital call)\b/i, 'g-capitalcall'],
+    [/\b(cap rate|capitalisation rate|capitalization rate)\b/i, 'g-caprate'],
+    /* These read as one term, but their head word is filtered as a brand
+       or category word, so overlap sees only the generic half. */
+    [/\b(preferred return|pref(erred)? hurdle|what is the pref)\b/i, 'preferred'],
+    [/\b(irr|equity multiple|cash[- ]on[- ]cash)\b/i, 'g-irr'],
+    [/\b(distribution|distributions|when do i get paid|when am i paid|payout)\b/i, 'distributions'],
+    [/\b(agency debt|fannie|freddie|bridge (loan|debt)|rate cap|fixed rate|floating rate)\b/i, 'g-debt']
   ];
 
   function byId(id) {
@@ -123,7 +153,7 @@
     /* Unique terms only, so synonym expansion widens reach without inflating
        the score of whatever it expanded into. */
     var q = [], seenQ = {};
-    tokens(question).forEach(function (w) { if (!seenQ[w]) { seenQ[w] = 1; q.push(w); } });
+    keyTokens(question).forEach(function (w) { if (!seenQ[w]) { seenQ[w] = 1; q.push(w); } });
     if (!q.length) { return []; }
 
     var scored = INDEX.map(function (row) {
@@ -170,7 +200,8 @@
       html += '<span class="pcp-agent__caveat">' + KB.meta.caveat + '</span>';
     }
     if (best.src) {
-      html += '<a class="pcp-agent__src" href="' + best.src + '">' + (best.label || 'Read more') +
+      html += '<a class="pcp-agent__src" href="' + best.src + '">' +
+              'Read more: ' + (best.label || 'on the site') +
               '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
               'stroke-width="2.5" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a>';
     }
@@ -181,10 +212,38 @@
   /* ---- Optional model call ---------------------------------------------- */
 
   function askModel(question, history) {
+    /* Retrieval picks what is most relevant, but the model is also allowed to
+       answer general questions about the asset class, so it gets a wider slice
+       than the three entries the local composer would use. Firm-specific
+       entries are labelled so the model knows which facts it may not vary. */
     var hits = search(question);
-    var context = (hits.length ? hits : INDEX.slice(0, 6).map(function (r) { return { entry: r.entry }; }))
-      .map(function (h) { return h.entry.t + ' — ' + h.entry.a.replace(/<[^>]+>/g, ''); })
-      .join('\n\n');
+    var picked = hits.map(function (h) { return h.entry; });
+    var ids = {};
+    picked.forEach(function (e) { ids[e.id] = true; });
+
+    /* Pad the remaining slots by alternating scopes. Filling in definition
+       order sent thirteen firm entries and one general one, because the firm
+       entries are declared first — which starved exactly the vocabulary a
+       general question needs. */
+    var isGeneral = function (e) { return e.id.indexOf('g-') === 0; };
+    var pool = { firm: [], general: [] };
+    INDEX.forEach(function (r) {
+      if (ids[r.entry.id]) { return; }
+      pool[isGeneral(r.entry) ? 'general' : 'firm'].push(r.entry);
+    });
+    var turn = 'general';
+    while (picked.length < 14 && (pool.firm.length || pool.general.length)) {
+      var from = pool[turn].length ? turn : (turn === 'firm' ? 'general' : 'firm');
+      var e = pool[from].shift();
+      if (!e) { break; }
+      picked.push(e);
+      ids[e.id] = true;
+      turn = turn === 'firm' ? 'general' : 'firm';
+    }
+    var context = picked.map(function (e) {
+      var scope = e.id.indexOf('g-') === 0 ? 'GENERAL' : 'FIRM';
+      return '[' + scope + ' | ' + e.t + '] ' + e.a.replace(/<[^>]+>/g, '');
+    }).join('\n\n');
     return fetch(CFG.endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -222,7 +281,6 @@
       '<header class="pcp-agent__head">' +
         '<div>' +
           '<p class="pcp-agent__title">Investor assistant</p>' +
-          '<p class="pcp-agent__sub">Automated &middot; not investment advice</p>' +
         '</div>' +
         '<button class="pcp-agent__close" type="button" aria-label="Close assistant">' +
           '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
@@ -307,29 +365,60 @@
       log.scrollTop = log.scrollHeight;
       history.push({ role: 'assistant', content: result.html.replace(/<[^>]+>/g, '') });
       if (result.related && result.related.length) {
-        renderPrompts(result.related.map(function (e) {
-          return { label: e.t + ': ' + e.k.split(' ').slice(0, 2).join(' ') };
-        }));
+        renderPrompts(result.related
+          .filter(function (e) { return e.q; })
+          .map(function (e) { return { label: e.q }; }));
       } else {
-        renderPrompts(KB.prompts.slice(0, 3));
+        /* Nothing closely related, so offer openers the visitor has not
+           already asked. Compared on letters alone: the chip carries a
+           question mark and the typed question usually does not, so a raw
+           string match would re-offer the question just answered. */
+        var flat = function (t) { return String(t).toLowerCase().replace(/[^a-z0-9]/g, ''); };
+        var asked = history.filter(function (h) { return h.role === 'user'; })
+                           .map(function (h) { return flat(h.content); });
+        var fresh = KB.prompts.filter(function (t) { return asked.indexOf(flat(t)) === -1; });
+        renderPrompts((fresh.length ? fresh : KB.prompts).slice(0, 3));
       }
     };
 
     var local = function () { window.setTimeout(function () { done(compose(question)); }, reduceMotion ? 0 : 420); };
 
-    if (CFG.endpoint) {
-      askModel(question, history).then(done).catch(local);
+    if (CFG.endpoint && !modelDown) {
+      askModel(question, history).then(done).catch(function () {
+        modelDown = true;
+        local();
+      });
     } else {
       local();
     }
   }
 
+  /* The launcher pulses to say it is there. Once someone has opened it that
+     job is done, so the animation is retired — and the fact is remembered, so
+     a returning visitor is not pulsed at again. Storage can throw in a private
+     window or with site data blocked, so every access is guarded. */
+  var SEEN_KEY = 'pcp-assistant-seen';
+  function markSeen() {
+    root.classList.add('is-seen');
+    try { window.localStorage.setItem(SEEN_KEY, '1'); } catch (e) { /* not important enough to fail on */ }
+  }
+  try {
+    if (window.localStorage.getItem(SEEN_KEY)) { root.classList.add('is-seen'); }
+  } catch (e) { /* leave the pulse running */ }
+
   function open() {
+    markSeen();
     panel.hidden = false;
-    /* Two frames so the opening transition has a starting state to run from. */
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () { root.classList.add('is-open'); });
-    });
+    /* Two frames so the opening transition has a starting state to run from.
+       The visible state lives entirely in `is-open`, so if those frames never
+       arrive — a throttled tab, a browser that has stopped compositing, an
+       engine quirk — the panel would sit un-hidden at zero opacity and the
+       assistant would look broken rather than open. The timeout guarantees the
+       class lands either way; whichever runs first wins and the other is a
+       no-op. */
+    var reveal = function () { root.classList.add('is-open'); };
+    requestAnimationFrame(function () { requestAnimationFrame(reveal); });
+    window.setTimeout(reveal, 120);
     launch.setAttribute('aria-expanded', 'true');
     if (!started) {
       started = true;

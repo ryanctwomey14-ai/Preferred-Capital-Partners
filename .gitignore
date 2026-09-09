@@ -8,3 +8,18 @@ _source/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Secrets. This repository is public, so anything matching these would be
+# world-readable the moment it was pushed — and GitHub secret scanning would
+# report the key to Anthropic, which revokes it. The assistant reads its key
+# from the environment for exactly this reason; nothing here should ever hold
+# a credential.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+
+# Netlify CLI link state
+.netlify/
