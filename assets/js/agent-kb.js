@@ -128,7 +128,7 @@ window.PCP_KB = {
       a: 'Three to five years is the target. Capital comes back on a sale or a refinance rather than on a ' +
          'date, which is an important distinction &mdash; the hold can run longer if selling into a weak ' +
          'market would damage the outcome. Better a patient exit than a punctual one.',
-      src: 'strategy.html#criteria', label: 'Acquisition Criteria', guard: true },
+      src: 'strategy.html#criteria', label: 'Acquisition criteria', guard: true },
 
     /* ------------------------------------------------------- distributions */
     { id: 'distributions', t: 'Distributions',
@@ -146,7 +146,7 @@ window.PCP_KB = {
          'a wave of turnover, an insurance repricing &mdash; protecting the property comes before a ' +
          'distribution. When it happens you hear about it in that quarter\'s report, with the reason and the ' +
          'plan, not in a later summary once it has been resolved.',
-      src: 'faq.html', label: 'Investor Questions', guard: true },
+      src: 'faq.html', label: 'Investor questions', guard: true },
 
     /* ---------------------------------------------------------------- tax */
     { id: 'k1', t: 'Tax',
@@ -155,7 +155,7 @@ window.PCP_KB = {
       a: 'You get a Schedule K-1 for every tax year you held an interest, showing your share of income, ' +
          'expenses and depreciation. Delivery is targeted for 31 March. If one is going to be late, you will ' +
          'hear before you need to file rather than after.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'depreciation', t: 'Tax',
       k: 'depreciation tax benefit shelter write off cost segregation deduction paper loss taxable income',
@@ -166,7 +166,7 @@ window.PCP_KB = {
          'accelerate it with a cost segregation study. Whether it offsets your other income is a different ' +
          'question, and it turns on the passive activity rules and your own circumstances &mdash; one for ' +
          'your CPA.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'recapture', t: 'Tax',
       k: 'recapture depreciation recapture pay it back sale taxed later deferral 25%',
@@ -174,7 +174,7 @@ window.PCP_KB = {
       a: 'It comes back at you on sale. Depreciation reduces your cost basis, so the portion of the gain ' +
          'attributable to it is recaptured and taxed, currently at a maximum federal rate of 25%. That makes ' +
          'it a deferral rather than an exemption, which is the part most short explanations leave out.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'ubti', t: 'Tax',
       k: 'ira 401k self directed retirement account ubti unrelated business taxable income solo roth custodian',
@@ -184,7 +184,7 @@ window.PCP_KB = {
          'unrelated business taxable income, or UBTI. It is worth walking through with your CPA before you ' +
          'subscribe rather than after. The paperwork with your custodian is something we work through with ' +
          'you.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'statetax', t: 'Tax',
       k: 'state tax filing another state nonresident return multiple states',
@@ -192,7 +192,7 @@ window.PCP_KB = {
       a: 'Possibly, yes. Holding a partnership interest in property located in another state can create a ' +
          'filing requirement there. Which states are involved is disclosed in each offering, so your CPA can ' +
          'plan for it rather than be surprised by it.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'exchange', t: 'Tax',
       k: '1031 exchange like kind swap defer gain roll over',
@@ -200,7 +200,7 @@ window.PCP_KB = {
       a: 'Generally not into a fund interest, no. A 1031 exchange needs a direct interest in real property, ' +
          'and a partnership interest does not qualify. Structures do vary, though, so it is worth asking ' +
          'about a specific current offering rather than assuming it either way.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     /* ---------------------------------------------------- risk & liquidity */
     { id: 'liquidity', t: 'Risk',
@@ -210,7 +210,7 @@ window.PCP_KB = {
          'no redemption programme, so capital stays committed until a sale or refinance returns it. That ' +
          'illiquidity is the price of the tax treatment and the control you gain. It also means the capital ' +
          'you commit should be capital you will not need during the hold.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'risks', t: 'Risk',
       k: 'risk risks lose money downside what could go wrong safe guarantee protection worst case',
@@ -220,7 +220,7 @@ window.PCP_KB = {
          'of the hold, and execution risk on renovation and management. They are managed, not eliminated ' +
          '&mdash; there is a real difference. Private real estate can lose value, including the total loss ' +
          'of invested capital.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'underperform', t: 'Risk',
       k: 'underperform miss plan behind budget bad quarter problem trouble deal goes wrong',
@@ -229,7 +229,7 @@ window.PCP_KB = {
          'how serious it is, the response might be pausing distributions, replacing the property manager, ' +
          'extending the hold, or in a bad case selling at a loss. Reserves are capitalised at acquisition ' +
          'for exactly this reason: so that a difficult two years does not have to become a permanent one.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'leverage', t: 'Risk',
       k: 'leverage debt loan ltv mortgage financing bridge floating fixed rate agency',
@@ -249,7 +249,7 @@ window.PCP_KB = {
          'gap of at least 12% between what is being paid in place and what renovated comparables within two ' +
          'miles are achieving. Anything outside those parameters is not underwritten, which keeps the ' +
          'conversation short.',
-      src: 'strategy.html#criteria', label: 'Acquisition Criteria' },
+      src: 'strategy.html#criteria', label: 'Acquisition criteria' },
 
     { id: 'markets', t: 'Strategy',
       k: 'where markets cities locations geography sunbelt charlotte houston sanantonio phoenix texas arizona carolina states',
@@ -277,7 +277,7 @@ window.PCP_KB = {
          'fifteen. Pair that with long-term fixed-rate debt and rents can adjust while the mortgage payment ' +
          'does not. Values follow property income rather than equity market sentiment, and that is what ' +
          'gives the allocation its diversifying role.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'wontdo', t: 'Strategy',
       k: 'dont avoid never wont refuse exclude exclusions restrictions development ground up construction speculative bridge',
@@ -296,7 +296,7 @@ window.PCP_KB = {
          'progress, variance against budget, and a plain-language note on what changed &mdash; including ' +
          'what missed. Annual financial statements and your K-1 come on top of that. The note on what missed ' +
          'is the part that matters; anyone can report a good quarter.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'portal', t: 'Operations',
       k: 'portal login sign in account access dashboard statements documents',
@@ -331,7 +331,7 @@ window.PCP_KB = {
       a: 'Personally, or through an LLC, a revocable trust, a self-directed IRA or a solo 401(k) &mdash; the ' +
          'subscription documents accommodate each. The one thing that helps is telling us the intended ' +
          'holder on the introductory call, so the paperwork is drawn up correctly the first time.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     /* ---------------------------------------------------------------- firm */
     { id: 'firm', t: 'The firm',
@@ -369,7 +369,7 @@ window.PCP_KB = {
          'href="mailto:tslaughter@prefcapitalpartners.com">tslaughter@prefcapitalpartners.com</a>. The ' +
          'acquisition criteria are published in full so you can screen against them first and save yourself ' +
          'the round trip.',
-      src: 'strategy.html#criteria', label: 'Acquisition Criteria' },
+      src: 'strategy.html#criteria', label: 'Acquisition criteria' },
 
     /* -------------------------------------------------------------- limits */
     { id: 'advice', t: 'Limits',
@@ -379,7 +379,7 @@ window.PCP_KB = {
          'registered investment adviser, and nothing here is investment, legal or tax advice. Whether this ' +
          'suits your circumstances is genuinely a question for your own advisers, working from the offering ' +
          'documents rather than from a website. What I can do is explain how any of it works.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'guarantee', t: 'Limits',
       k: 'guarantee guaranteed promise sure thing safe cant lose principal protected insured',
@@ -388,7 +388,7 @@ window.PCP_KB = {
          'underwriting assumptions, and assumptions can be wrong. Private real estate can lose value, up to ' +
          'and including the total loss of invested capital. A sponsor describing a fixed return on a private ' +
          'real estate deal is describing something they are not in a position to promise.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     /* ======================================================================
        GENERAL EDUCATION
@@ -452,7 +452,7 @@ window.PCP_KB = {
          'decline &mdash; commonly dilution of the non-participating interest &mdash; is set out in the ' +
          'operating agreement. It is one of the clauses most worth reading before you commit rather than ' +
          'after.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'g-k1', t: 'Tax',
       k: 'k-1 k1 schedule what is a k-1 tax form filing extension when do i get my taxes partnership return 1099',
@@ -462,7 +462,7 @@ window.PCP_KB = {
          'before it can issue yours, which is why K-1s tend to arrive later than other tax documents &mdash; ' +
          'filing an extension is common in this asset class. Your accountant uses it to report the ' +
          'investment on your personal return.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'g-passive', t: 'Tax',
       k: 'passive loss activity rules offset my income can i deduct real estate professional suspended losses w2',
@@ -472,7 +472,7 @@ window.PCP_KB = {
          'suspended and carried forward, and often becomes usable when the property is sold. Real estate ' +
          'professional status and short-term rental treatment are the well-known exceptions, and both have ' +
          'strict tests. How any of it lands for you is a question for your CPA rather than for me.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'g-costseg', t: 'Tax',
       k: 'cost segregation seg bonus depreciation accelerate accelerated study components 27.5',
@@ -482,7 +482,7 @@ window.PCP_KB = {
          'spreading evenly across 27.5. Bonus depreciation rules govern how much can be taken immediately. ' +
          'Worth keeping in mind that it accelerates the deduction rather than increasing it, and it raises ' +
          'the amount recaptured later on sale.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'g-debt', t: 'How it works',
       k: 'agency debt fannie freddie bridge loan fixed floating rate cap interest only amortisation mortgage financing',
@@ -492,7 +492,7 @@ window.PCP_KB = {
          'with a purchased rate cap. The distinction matters more than it sounds: a fixed rate that outlasts ' +
          'the business plan takes refinancing pressure off the table, while short floating-rate debt forces ' +
          'a refinance whether or not the market happens to be cooperating that month.',
-      src: 'strategy.html#criteria', label: 'Acquisition Criteria' },
+      src: 'strategy.html#criteria', label: 'Acquisition criteria' },
 
     { id: 'g-vsreit', t: 'How it works',
       k: 'reit reits public stocks difference traded liquid versus private why not just buy a reit etf',
@@ -502,7 +502,7 @@ window.PCP_KB = {
          'partnership interest is illiquid, valued off property income rather than sentiment, and the ' +
          'depreciation flows through on a K-1. The trade is control and tax treatment in exchange for giving ' +
          'up the ability to sell on any given day.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'g-diligence', t: 'How it works',
       k: 'due diligence vet a sponsor questions to ask evaluate check background red flags how do i know trust',
@@ -512,7 +512,7 @@ window.PCP_KB = {
          'line by line. How much of the sponsor\'s own money is in the deal. What the debt terms are and ' +
          'when they mature. And what happened on the deals that did not go to plan. A sponsor who answers ' +
          'those directly is telling you something. So is one who does not.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'g-regd', t: 'Eligibility',
       k: 'reg d regulation 506b 506c rule difference private placement exempt offering securities law sec',
@@ -542,7 +542,7 @@ window.PCP_KB = {
          'for the length of the hold, and execution risk on renovation and management. Leverage magnifies ' +
          'all of them, in both directions. They can be managed but not removed, and private real estate can ' +
          'lose value including the total loss of invested capital.',
-      src: 'faq.html', label: 'Investor Questions' },
+      src: 'faq.html', label: 'Investor questions' },
 
     { id: 'g-class', t: 'How it works',
       k: 'workforce housing class a b c what does class b mean asset grading vintage quality affordable',
@@ -552,7 +552,7 @@ window.PCP_KB = {
          'workforce housing. The argument for B and C is that the demand behind them is driven by ' +
          'affordability rather than preference, so it holds up when households trade down. New construction ' +
          'rarely competes at that price point, because it cannot be built for it.',
-      src: 'strategy.html#criteria', label: 'Acquisition Criteria' },
+      src: 'strategy.html#criteria', label: 'Acquisition criteria' },
 
     { id: 'g-irr', t: 'Terms',
       k: 'irr internal rate of return equity multiple cash on cash difference which matters annualised metric',
@@ -562,6 +562,6 @@ window.PCP_KB = {
          'is total dollars back over dollars in, ignoring timing entirely. IRR annualises with timing ' +
          'weighted, so money returned earlier counts for more. A high IRR next to a low multiple usually ' +
          'means a quick exit rather than a better one, which is why the three are worth reading together.',
-      src: 'faq.html', label: 'Investor Questions', guard: true }
+      src: 'faq.html', label: 'Investor questions', guard: true }
   ]
 };
