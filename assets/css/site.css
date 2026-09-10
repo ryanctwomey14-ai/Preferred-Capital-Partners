@@ -1412,7 +1412,7 @@ table { border-collapse: collapse; width: 100%; }
      mail and phone — the web address added for the business cards is an
      ordinary https link and was landing at 34px tall. */
   main p a[href^="mailto:"], main p a[href^="tel:"],
-  main dd a { padding-block: .7rem; }
+  main .om__specs dd a, main dd a { padding-block: .7rem; }
 
   .checkline { grid-template-columns: 30px 1fr; }
   .checkline input[type="checkbox"] { width: 28px; height: 28px; }
