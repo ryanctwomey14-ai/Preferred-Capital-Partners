@@ -1408,8 +1408,11 @@ table { border-collapse: collapse; width: 100%; }
      19-35px tall. Vertical padding on an inline element grows the hit box
      without touching the line box, so these get a thumb-sized target and the
      paragraph is unchanged. */
+  /* Every contact affordance in running copy or a definition list, not just
+     mail and phone — the web address added for the business cards is an
+     ordinary https link and was landing at 34px tall. */
   main p a[href^="mailto:"], main p a[href^="tel:"],
-  main dd a[href^="mailto:"], main dd a[href^="tel:"] { padding-block: .55rem; }
+  main dd a { padding-block: .7rem; }
 
   .checkline { grid-template-columns: 30px 1fr; }
   .checkline input[type="checkbox"] { width: 28px; height: 28px; }
