@@ -10,7 +10,7 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 
 > Performance claims, track record, and investor testimonials on a site that publicly markets a Reg D 506(c) offering are regulated communications. Do not launch with sample figures in place.
 
-**Total: 19 placeholders across 4 pages.**
+**Total: 18 placeholders across 4 pages.**
 
 ---
 
@@ -32,7 +32,6 @@ Every value on this site that is **not yet verified** is marked in the HTML with
 
 | Currently shows | What it needs |
 |---|---|
-| Preferred Capital Partners Fund II, LP | replace with the live offering |
 | 8% | Replace with a verified value |
 | 70 / 30 | Replace with a verified value |
 | 3–5 years | Replace with a verified value |
