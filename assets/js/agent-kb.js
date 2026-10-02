@@ -346,7 +346,7 @@ window.PCP_KB = {
     { id: 'trackrecord', t: 'The firm',
       k: 'track record past performance history results previous deals realised exits case study experience',
       q: 'What is your track record?',
-      a: 'A fair question, and the honest answer has two halves. The managing partner spent 15 years in ' +
+      a: 'A fair question, and the honest answer has two halves. The Managing Partner spent 15 years in ' +
          'corporate financial planning and analysis before moving into multifamily, so the underwriting ' +
          'discipline is long-standing &mdash; but the firm itself is early. Rather than point you at a ' +
          'summary, ask for the specifics directly and you will get them in writing: ' +
@@ -359,7 +359,7 @@ window.PCP_KB = {
       a: 'The quickest route is email &mdash; <a ' +
          'href="mailto:tslaughter@prefcapitalpartners.com">tslaughter@prefcapitalpartners.com</a> &mdash; or ' +
          '<a href="invest.html">request an introduction</a> and you will have a reply within one business ' +
-         'day. Introductory conversations are held by the managing partner, not passed to someone else.',
+         'day. Introductory conversations are held by the Managing Partner, not passed to someone else.',
       src: 'contact.html', label: 'Contact' },
 
     { id: 'broker', t: 'Contact',
